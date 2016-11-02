@@ -1,5 +1,7 @@
 #pragma once
 
+#include <GLFW/glfw3.h>
+
 namespace engine
 {
         namespace graphics
@@ -9,6 +11,7 @@ namespace engine
                         private:
                                 const char *m_Name;
                                 int m_Width, m_Height;
+                                GLFWwindow *m_Window
                         public:
                                 Window(const char *name, int width, int height);
                                 ~Window();
