@@ -18,8 +18,11 @@ namespace engine
                                 Window(const char *name, int width, int height);
                                 ~Window();
                                 void clear() const;
+                                void update();
                                 bool closed() const;
-                                void update() const;
+                        
+                                inline int getWidth() const { return m_Width; }
+                                inline int getHeight() const { return m_Height; }
                         private:
                                 bool init();
                 };
