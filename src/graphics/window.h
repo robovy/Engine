@@ -8,7 +8,7 @@ namespace engine
                 {
                         private:
                                 const char *m_Name;
-                                int width, height;
+                                int m_Width, m_Height;
                         public:
                                 Window(const char *name, int width, int height);
                                 ~Window();
