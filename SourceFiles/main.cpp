@@ -9,6 +9,7 @@ int main()
         
         while(!window.closed())
         {
+                window.clear();
                 window.update();
         }
         
