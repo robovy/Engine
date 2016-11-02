@@ -17,6 +17,7 @@ namespace engine
                         public:
                                 Window(const char *name, int width, int height);
                                 ~Window();
+                                void clear() const;
                                 bool closed() const;
                                 void update() const;
                         private:
