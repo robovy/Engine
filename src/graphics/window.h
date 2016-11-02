@@ -7,7 +7,7 @@ namespace engine
                 class Window
                 {
                         private:
-                                const char *name;
+                                const char *m_Name;
                                 int width, height;
                         public:
                                 Window(const char *name, int width, int height);
