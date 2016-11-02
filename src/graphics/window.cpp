@@ -31,7 +31,7 @@ namespace engine
                         {
                                 glfwTerminate();
                                 std::cout << "Could Not Create glfw Window" << std::endl;
-                                return;
+                                return false;
                         }
                         gflwMakeContextCurrent(m_Window);
                         return true;
