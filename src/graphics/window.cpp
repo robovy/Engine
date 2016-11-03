@@ -4,6 +4,8 @@ namespace engine
 {
         namespace graphics
         {
+                void windowResize(GLFWwindow *window, int width, int height);
+                
                 Window::Window(const char *title int width int height)
                 {
                         m_Title = title;
@@ -34,6 +36,7 @@ namespace engine
                                 return false;
                         }
                         gflwMakeContextCurrent(m_Window);
+                        glfwWindowSizeCallback(m_Window, windowResize);
                         return true;
                 }
                 
@@ -45,14 +48,17 @@ namespace engine
                 void Window::update()
                 {
                         glfwPollEvents();
-                        glfwGetFrameBufferSize(m_Window, &m_Width, &m_Height);
-                        glViewport(0, 0, m_Width, m_Height);
                         glfwSwapBuffers(m_Window);
                 }
                 
                 bool Window::closed()
                 {
                         glfwWindowShouldClose(m_Window) == 1;
+                }
+                
+                void windowResize(GLFWwindow *window, int width, int height)
+                {
+                        glViewport(0, 0, m_Width, m_Height);
                 }
         }
 }
